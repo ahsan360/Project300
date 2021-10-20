@@ -1,0 +1,26 @@
+{% extends "projectApp/base.html" %}
+
+{% block content %}
+<body>
+  
+    <div class="container">
+
+        <h1>Posts</h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-primary" href="/cpost" role="button">Ask</a>
+           </div>
+
+        <ul>
+            {% for post in posts %}
+                <li>  
+                    <h3>  {{ post.title }} - {{ post.author }}<br></h3><br>
+                    {{ post.body }}
+                    <hr>
+                </li>
+
+            {% endfor %}
+        </ul>
+
+    </div>
+</body>
+{% endblock content %}

@@ -1,0 +1,103 @@
+.social:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd
+}
+.navbar-brand{
+    font-size: 3rem;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+} 
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+.navbar-brand:hover{
+  
+    color: black;
+}
+.nav-link
+{
+font-family: 'Rubik', sans-serif;
+margin-left: 10px;
+margin-right: 10px;
+color:black;
+text-transform: uppercase;
+}
+.nav-link:hover{
+    color:black;
+}
+.col-lg-7{
+    font-family: 'Cairo', sans-serif;
+    font-size:2rem;
+    color:rgb(255, 255, 255);
+}
+.main{
+    background: url(/i1.jpg)no-repeat;
+    background-size :cover;
+    height: 150vh;
+    background-position:50% 50% ;
+    width: 100%;
+}
+.main h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+.btn1 {
+    font-family: 'Rubik', sans-serif;
+    height: 45px;
+    width: 35%;
+    border :none;
+    outline: none;
+    background-color:rgb(219, 16, 16); 
+    color:white;
+    font-weight: 700;
+    border-radius: 50px;
+}
+.col-lg-9{
+    font-family: 'Rubik', sans-serif;
+    font-size:4rem;
+}
+.news{
+    background-color: rgb(31, 29, 29);
+    color:white;
+}
+.news::placeholder{
+ color: white;
+}
+.news p {
+    
+}
+.services  
+{
+    height:  1200px;
+    background:#dde9dc;
+}
+.card{
+    
+    margin-bottom:30%;
+     
+}
+.card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.card:hover{
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+ .carousel{
+    margin-bottom:10%;
+ }
+ .carousel{
+     padding-top:10%;
+ }
+ @media only screen and (max-width: 600px) {
+    .services {
+     height: 100%;
+    }
+  }
