@@ -1,0 +1,31 @@
+{% extends "projectApp/base.html" %}
+
+{% block content %}
+
+<body>
+    <div class="container">
+        <div class="detail">
+            <div class="row mt-5">
+                <div class="col"><h4>Rleted Post</h4><hr>
+                   {% for post in posts %}
+                 
+                      <a  style="text-decoration: none" href= "{% url 'details' post.id %}"><h5> {{ post.title }} - {{ post.author }}</h5> </a> 
+                    
+                   {% endfor %}
+                </div>
+                <div class="col-lg-8">
+                   <h3> {{ obj.title }} - {{ obj.author }}<br></h3><br>
+                   {{ obj.body }}
+                   <hr>
+           </div>
+        </div>
+     
+     </div>
+       
+     
+        
+        
+
+    </div>
+</body>
+{% endblock content %}

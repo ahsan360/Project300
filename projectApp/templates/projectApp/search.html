@@ -1,0 +1,22 @@
+{% extends "projectApp/base.html" %}
+
+{% block content %}
+
+<body>
+    <div class="container">
+        <h1>search</h1>
+
+        <div class="sea">
+            {% if post %}
+            {% for i in post %}
+              <a style="text-decoration: none" href="{% url 'details' i.id %}"> <h2>{{ i.title }}</h2></a>
+            {% endfor %}
+            {% else %}
+            <h1>Not Found this keyword</h1>
+            {% endif %}
+
+        </div>
+
+    </div>
+</body>
+{% endblock content %}

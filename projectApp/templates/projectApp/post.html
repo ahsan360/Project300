@@ -1,25 +1,46 @@
 {% extends "projectApp/base.html" %}
 
 {% block content %}
+
 <body>
-  
-    <div class="container">
 
-        <h1>Posts</h1>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a class="btn btn-primary" href="/cpost" role="button">Ask</a>
-           </div>
+    <div class="post">
 
-        <ul>
+        <div class="container">
+
+            {% if user.is_authenticated %}
+            <h1>Posts</h1>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-primary" href="/cpost" role="button">Ask</a>
+            </div>
+            <form action="/search"  method="GET">
+                <div class="row height d-flex justify-content-center align-items-center">
+                    <div class="col-md-8">
+                        <div class="search"> <i class="fa fa-search"></i>
+                             <input type="text" name="search" class="form-control"
+                                placeholder="Have a question? Ask Now"> 
+                                <button class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          
+
+
             {% for post in posts %}
-                <li>  
-                    <h3>  {{ post.title }} - {{ post.author }}<br></h3><br>
-                    {{ post.body }}
-                    <hr>
-                </li>
-
+            <div class="po">
+                <h3> {{ post.title }} - {{ post.author }}<br></h3><br>
+                {{ post.body }}
+                <hr>
+            </div>
             {% endfor %}
-        </ul>
+            <br>
+        </div>
+
+        {% endif %}
+
+
+    </div>
 
     </div>
 </body>
