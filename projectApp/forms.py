@@ -12,7 +12,8 @@ class UserRegistrationForm(UserCreationForm):
         fields = ['username', 'email', 'password1' ,'password2']
 
 class GeeksForm(forms.ModelForm):
-  
+    
+    
     # create meta class
     class Meta:
         # specify model to be used
@@ -20,3 +21,9 @@ class GeeksForm(forms.ModelForm):
   
         # specify fields to be used
         fields = ['title', 'author',  'body']
+  
+        widget = {
+            'title' : forms.TextInput(attrs={'class':'form-control'}),
+            'author' : forms.TextInput(attrs={'class':'form-control'}),
+            'body' : forms.TextInput(attrs={'class':'form-control'}),
+       }
