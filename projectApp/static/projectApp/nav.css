@@ -56,6 +56,9 @@ text-transform: uppercase;
     font-family: 'Rubik', sans-serif;
     font-size:4rem;
 }
+.detail{
+    font-family: 'Rubik', sans-serif;
+}
 .news{
     background-color: rgb(31, 29, 29);
     color:white;
@@ -98,3 +101,65 @@ text-transform: uppercase;
      height: 100%;
     }
   }
+
+.col{
+    font-family: 'Rubik', sans-serif;
+ }
+ .about{
+     height: 1200px;
+    
+ }
+ .xa{
+    height: 1200px;
+    margin-top: 100px;
+}
+.post{
+     background: #f1f1f1;
+}
+.po{
+    background: #f1f1f1;
+}
+.sea{
+    margin-top: 150px;
+    height: 1000px;
+    text-align: center;
+    
+}
+/* search */
+
+.height {
+    height: 70vh
+}
+
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue
+}
+
+/* endsearch */
