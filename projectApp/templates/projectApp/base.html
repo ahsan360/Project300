@@ -62,8 +62,10 @@
                 <ul class="navbar-nav ">
 
                     {% if user.is_authenticated %}
-                  
-                    <a class="nav-item nav-link" href="/logo">({{ user.username }})-Logout</a>
+                    <a class="nav-item nav-link" href="">({{user.username}})</a>
+                     
+                    <a class="nav-item nav-link" href="/logo">|  &nbsp;Logout</a>
+                    
                     {% else %}
                     <a class="nav-item nav-link" href="/log"> <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
                         &nbsp;Login</a>
