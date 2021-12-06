@@ -1,7 +1,8 @@
 from django.db.models.base import Model
 from django.shortcuts import render , redirect
-from django.views.generic import ListView,DeleteView
+from django.views.generic import ListView,DeleteView,UpdateView
 from django.http import HttpResponse
+from django.views.generic.base import TemplateView
 from . import models
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate, login,logout
@@ -74,3 +75,23 @@ def search (request) :
 
 def contact (request) :
     return HttpResponse("contact Geeks")
+def Update (request,pk) :
+    pk  = models.Add.objects.get(pk=pk)
+    if request.method == 'POST':
+     form = GeeksForm(request.POST,instance=pk)
+     if form.is_valid():
+        form.save()
+        messages.success(request,'post have  Updated successfully')
+        return redirect('/posts') 
+          
+    else :
+         form = GeeksForm(instance=pk)
+         return render ( request,'projectApp/Update.html',{'form' : form})
+def delete (request,pk) :
+    info  = models.Add.objects.get(pk=pk)
+    info.delete()
+    messages.success(request,'post have  Deleted successfully')
+    return redirect('/posts')
+
+   
+   

@@ -14,6 +14,8 @@ urlpatterns = [
     path('cpost/', views.cpost,name='cpost'),
     path('search/', views.search,name='search'),
     path('<int:id>', views.details,name='details'),
+    path('Update/<int:pk>', views.Update,name='Update'),
+    path('delete/<int:pk>', views.delete,name='delete'),
     path('log/',auth_views.LoginView.as_view(template_name='projectApp/log.html'),name='login'),
     path('logo/',auth_views.LogoutView.as_view(template_name='projectApp/home.html'),name='logout')
 ] 
