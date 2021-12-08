@@ -1,0 +1,66 @@
+{% extends "projectApp/base.html" %}
+
+{% block content %}
+
+<body>
+   <div class="container">
+      <div class="detail">
+         <div class="row mt-5">
+            <div class="col">
+               <h4>Rleted Post</h4>
+               <hr>
+               {% for post in posts %}
+
+               <a style="text-decoration: none" href="{% url 'details' post.id %}">
+                  <h5> {{ post.title }} - {{ post.author }}</h5>
+               </a>
+
+               {% endfor %}
+            </div>
+            <div class="col-lg-8">
+               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a class="btn btn-primary" href="/cpost" role="button">Ask</a>
+               </div>
+               <h3> {{ obj.title }} - {{ obj.author }}<br></h3><br>
+               {{ obj.body }}
+               <hr>
+               <br>
+
+
+               {% for cmnt in obj.comments.all %}
+               {{ cmnt.name }} | <small>{{ cmnt.date_added }}</small><br>
+                
+              
+               {% if request.user.username == cmnt.name %}
+               <a href="{% url 'delete_comment' cmnt.pk %}"> delete</a><br>
+               {% endif %}
+              <small> {{ cmnt.body }}</small>   <br>
+               <br>
+               {% if cmnt.image %}
+               <img src="{{ cmnt.image.url  }}" class="d-block w-100" width="100%" height="300px" alt="..." /><br>
+               {% endif %}
+
+               <br>
+
+               {% endfor %}
+               <br>
+               <br>
+               <br>
+
+               <a href="{% url 'addcomment' obj.pk %}" class="btn btn-primary" role="button">Add Comment</a>
+
+               <br>
+               <br>
+
+            </div>
+         </div>
+
+      </div>
+
+
+
+
+
+   </div>
+</body>
+{% endblock content %}

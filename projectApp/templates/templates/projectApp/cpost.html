@@ -1,0 +1,40 @@
+{% extends "projectApp/base.html" %}
+
+{% block content %}
+<body>
+
+    <div class="container">
+
+        <h1>Create A Posts</h1>
+        <br>
+ <form method='POST'>
+    {% csrf_token %}
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <label for="exampleFormControlInput1"  class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="exampleFormControlInput1" placeholder="title">
+        </div> 
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <label for="id_author" class="form-label">Author</label><br>
+              {{ form.author }}
+            </div>
+          </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <label for="exampleFormControlTextarea1" class="form-label">Post</label>
+            <textarea  type="text"    name="body" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+            <br>
+            <button class="btn btn-primary justify-content-center" type="submit">Post</button>
+          </div>
+        </div>
+         
+    </form>
+        <br>
+      
+   
+
+    </div>
+</body>
+{% endblock content %}
